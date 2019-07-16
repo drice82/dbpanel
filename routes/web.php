@@ -16,6 +16,7 @@ Route::get('/', function () {
 });
 
 Route::get('/dbpanel', 'DbPanelController@index');
+Route::get('/us', 'DbPanelController@us');
 
 Auth::routes();
 

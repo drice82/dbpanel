@@ -13,6 +13,11 @@ class DbPanelController extends Controller
         $this->middleware('auth');
     }
 
+    public function us()
+    {
+      return view('dbpanel/us');
+    }
+
     public function index()
     {
    $data['tasks'] = [
