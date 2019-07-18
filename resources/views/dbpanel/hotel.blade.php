@@ -20,7 +20,7 @@
 
           <form class="search-form">
             <div class="input-group">
-              <input type="text" name="search" class="form-control" placeholder="Search">
+              <input type="text" name="name" class="form-control" placeholder="name">
 
               <div class="input-group-btn">
                 <button type="submit" name="submit" class="btn btn-warning btn-flat"><i class="fa fa-search"></i>
@@ -68,6 +68,9 @@
                 @endforeach
                 </tbody>
               </table>
+              <div class="mt-3">
+                {!! $data->render() !!}
+              </div>
               @else
                 <tbody>
                   <tr ><div class="text-center"><h3>没有查到相关数据！</h3></div></td></tr>

@@ -14,8 +14,11 @@ class HotelController extends Controller
 
     public function index(Request $request)
     {
-        $keywords_name = $request->input('search');
-        $data = Hotel::select('Name', 'CtfId', 'Gender', 'Birthday', 'Address', 'Mobile', 'Version') -> where('Name', $keywords_name)->get();
+        $keywords_name = $request->input('name');
+        $data = Hotel::select('Name', 'CtfId', 'Gender', 'Birthday', 'Address', 'Mobile', 'Version') -> where('Name', $keywords_name)->paginate(20);
+        $appendData = $data->appends(array(
+            'name' => $keywords_name,
+        ));
         return view('dbpanel.hotel', compact('data'));
     }
 }
