@@ -31,63 +31,54 @@
           </form>
 
       <!-- Default box -->
-      <div class="box">
-        <div class="box-header with-border">
-          <h3 class="box-title">Title</h3>
 
-          <div class="box-tools pull-right">
-            <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
-              <i class="fa fa-minus"></i></button>
-            <button type="button" class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="Remove">
-              <i class="fa fa-times"></i></button>
-          </div>
-        </div>
-        <div class="box-body">
-            {{-- 表格内容 --}}
-            <div class="ibox-content">
-                <table class="table table-hover table-bordered table-condensed">
-                    <thead>
-                        <tr class="success">
-                            <th class="text-center">姓名</th>
-                            <th class="text-center">身份证</th>
-                            <th class="text-center">性别</th>
-                            <th class="text-center">生日</th>
-                            <th class="text-center">地址</th>
-                            <th class="text-center">手机</th>
-                            <th class="text-center">时间</th>
-                        </tr>
-                    </thead>
+          <div class="box">
+            <div class="box-header">
+              <h3 class="box-title">Data Table With Full Features</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+              <table id="example1" class="table table-bordered table-striped">
+                <thead>
+                <tr>
+                  <th>姓名</th>
+                  <th>身份证</th>
+                  <th>性别</th>
+                  <th>生日</th>
+                  <th>地址</th>
+                  <th>手机</th>
+                  <th>时间</th>
+                </tr>
+                </thead>
 
-                    @if ($data->first())
-                    <tbody>
-                        @foreach ($data as $element)
-                        {{-- {{dd($element)}} --}}
-                        <tr class="gradeU ">
-                            <td>{{$element->Name}}</td>
-                            <td class="center">{{$element->CtfId}}</td>
-                            <td>{{$element->Gender}}</td>
-                            <td>{{$element->Birthday}}</td>
-                            <td>{{$element->Address}}</td>
-                            <td>{{$element->Mobile}}</td>
-                            <td>{{$element->Version}}</td>
-                            <td>
+                @if ($data->first())
 
-                            </td>
-                        </tr>
-                        @endforeach
-                    </tbody>
-                </table>
-                <div class="text-center"></div>
-                @else
                 <tbody>
-                    <tr ><td colspan="7"><div class="text-center"><h3>没有查到相关数据！</h3></div></td></tr>
+                @foreach ($data as $element)
+                {{-- {{dd($element)}} --}}
+                <tr>
+                  <td>{{$element->Name}}</td>
+                  <td>{{$element->CtfId}}</td>
+                  <td>{{$element->Gender}}</td>
+                  <td>{{$element->Birthday}}</td>
+                  <td>{{$element->Address}}</td>
+                  <td>{{$element->Mobile}}</td>
+                  <td>{{$element->Version}}</td>
+                </tr>
+                @endforeach
                 </tbody>
-            </table>
-            @endif
+              </table>
+              @else
+                <tbody>
+                  <tr ><div class="text-center"><h3>没有查到相关数据！</h3></div></td></tr>
+                </tbody>
+              </table>
+              @endif
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
 
-
-
-        </div>
         <!-- /.box-body -->
         <div class="box-footer">
           Footer
