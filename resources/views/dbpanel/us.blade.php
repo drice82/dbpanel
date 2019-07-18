@@ -6,24 +6,30 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Fixed Layout
-        <small>Blank example to the fixed layout</small>
+        Page Header
+        <small>Optional description</small>
       </h1>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li><a href="#">Layout</a></li>
-        <li class="active">Fixed</li>
+        <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
+        <li class="active">Here</li>
       </ol>
     </section>
 
     <!-- Main content -->
-    <section class="content">
-      <div class="callout callout-info">
-        <h4>Tip!</h4>
+    <section class="content container-fluid">
 
-        <p>Add the fixed class to the body tag to get this layout. The fixed layout is your best option if your sidebar
-          is bigger than your content because it prevents extra unwanted scrolling.</p>
-      </div>
+          <form class="search-form">
+            <div class="input-group">
+              <input type="text" name="search" class="form-control" placeholder="Search">
+
+              <div class="input-group-btn">
+                <button type="submit" name="submit" class="btn btn-warning btn-flat"><i class="fa fa-search"></i>
+                </button>
+              </div>
+            </div>
+            <!-- /.input-group -->
+          </form>
+
       <!-- Default box -->
       <div class="box">
         <div class="box-header with-border">
@@ -37,7 +43,7 @@
           </div>
         </div>
         <div class="box-body">
-          Start creating your amazing application!
+          {{ $results }}
         </div>
         <!-- /.box-body -->
         <div class="box-footer">
@@ -47,9 +53,11 @@
       </div>
       <!-- /.box -->
 
+
     </section>
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
+
 
 @endsection

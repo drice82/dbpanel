@@ -11,13 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Route::get('/dbpanel', 'DbPanelController@index');
-Route::get('/us', 'DbPanelController@us');
-
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/hotel', 'HotelController@index')->name('hotel');
