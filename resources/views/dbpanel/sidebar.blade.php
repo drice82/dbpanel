@@ -17,9 +17,12 @@
 
       <!-- Sidebar Menu -->
       <ul class="sidebar-menu" data-widget="tree">
-        <li class="header">HEADER</li>
+        <li class="header">用户中心</li>
         <!-- Optionally, you can add icons to the links -->
-        <li class="active"><a href="{{ route('hotel') }}"><i class="fa fa-link"></i> <span>酒店数据</span></a></li>
+	<li class="active"><a href="{{ route('dbpanel') }}"><i class="fa fa-link"></i> <span>用户中心</span></a></li>
+        <li><a href="#"><i class="fa fa-link"></i> <span>会员充值</span></a></li>
+        <li class="header">数据中心</li>
+        <li><a href="{{ route('hotel') }}"><i class="fa fa-link"></i> <span>酒店数据</span></a></li>
         <li><a href="#"><i class="fa fa-link"></i> <span>日本海关数据</span></a></li>
         <li class="treeview">
           <a href="#"><i class="fa fa-link"></i> <span>中国海关数据</span>
