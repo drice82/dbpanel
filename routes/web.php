@@ -10,10 +10,11 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/dbpanel', 'DbPanelController@index')->name('dbpanel');
+Route::redirect('/', '/dbpanel', 301);
 
-Route::get('/dbpanel', 'DbPanelController@index');
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/hotel/{name?}', 'HotelController@index')->name('hotel');
