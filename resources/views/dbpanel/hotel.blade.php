@@ -5,34 +5,40 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Data Tables
-        <small>advanced tables</small>
+        酒店数据查询
+        <small>hotel info</small>
       </h1>
     </section>
 
     <!-- Main content -->
-<div class="box box-primary">
-    <form class="search-form">
-      <div class="input-group">
-        <input type="text" name="name" class="form-control" placeholder="name">
-
-        <div class="input-group-btn">
-          <button type="submit" name="submit" class="btn btn-warning btn-flat"><i class="fa fa-search"></i>
-          </button>
-        </div>
-      </div>
-      <!-- /.input-group -->
-    </form>
-</div>
 
     <section class="content">
       <div class="row">
         <div class="col-xs-12">
           <div class="box">
-            <div class="box-header">
-              <h3 class="box-title">酒店数据</h3>
-            </div>
             <!-- /.box-header -->
+          <div class="box box-primary">
+            <div class="box-header with-border">
+              <h3 class="box-title">输入姓名</h3>
+            </div>
+            <div class="box-body">
+              <div class="row">
+                <form class="search-form">
+                <div class="col-xs-5">
+                  <input type="text" name="name" class="form-control" placeholder="姓名">
+                </div>
+                <div class="input-group-btn">
+                  <button type="submit" name="submit" class="btn btn-warning btn-flat"><i class="fa fa-search"></i>
+                  </button>
+                </div>
+		</form>
+              </div>
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+
+
             <div class="box-body">
               <table id="example1" class="table table-bordered table-hover">
                 <thead>
@@ -48,9 +54,9 @@
                 </thead>
 
                 @if ($data->first())
+                <tbody>
                 @foreach ($data as $element)
                 {{-- {{dd($element)}} --}}
-                <tbody>
                   <tr>
                   <td>{{$element->Name}}</td>
                   <td>{{$element->CtfId}}</td>
@@ -60,8 +66,8 @@
                   <td>{{$element->Mobile}}</td>
                   <td>{{$element->Version}}</td>
                   </tr>
-                </tbody>
                 @endforeach
+                </tbody>
               </table>
               <div class="mt-3"> 
                 {!! $data->render() !!}
